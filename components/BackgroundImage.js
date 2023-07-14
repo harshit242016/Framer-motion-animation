@@ -9,41 +9,29 @@
 import { useEffect,useState} from 'react';
 import React from 'react';
 import { motion } from 'framer-motion';
-
+import config from '@/config';
 const transition = {
-	duration: 5,
+	duration: 4,
 	ease: "easeOut",
 	repeat: Infinity,
     repeatDelay: 0
 };
-const initialStyle = {
-	x1: 700,
-	y1: 0,
-	x2 : 630,
-	y2 : 100
-  };
-  
-  const endStyle = {
-	x1: 70, // New y-coordinate for point 1
-	y1: 1000,
-	x2: 0,
-	y2 : 1100 // New y-coordinate for point 2
-  };
+const transition2 = {
+	duration: 7,
+	ease: "easeOut",
+	repeat: Infinity,
+    repeatDelay: 0
+};
 
 const BackgroundImage = () => {
 	return (
 		<div className="background-image">
 			<svg height="200vh" width="100vw">
-				<motion.line className="absolute" stroke="rgba(0,0,0,0.16)" strokeWidth="0.67px" x1="700px" x2="630px" y1="0px" y2='100px' animate = {endStyle} transition={transition}/>
-				<motion.line className="absolute" stroke="rgba(239, 90, 60, 0)" strokeWidth="1px" x1={initialStyle.x1} x2={initialStyle.x2} y1={initialStyle.y1} y2={initialStyle.y2} animate = {endStyle} transition={transition}/>
-				<motion.line className="absolute" stroke="rgba(239, 90, 60, 0.1111111111111111)" strokeWidth="1px" x1={initialStyle.x1} x2={initialStyle.x2} y1={initialStyle.y1} y2={initialStyle.y2} animate = {endStyle}transition={transition}/>
+				<motion.line className="absolute" stroke="rgba(0,0,0,0.16)" strokeWidth="0.67px" x1="700" x2="630" y1="0" y2='100' animate = {config.line1style} transition={transition}/>
+				<motion.line className="absolute" stroke="rgba(239, 90, 60, 0)" strokeWidth="1px" x1="200px" x2="0px" y1="0px" y2="1100px" animate = {config.line2style} transition={transition}/>
+				<motion.line className="absolute" stroke="rgba(239, 90, 60, 0.1111111111111111)" strokeWidth="1px" x1="200" x2="0" y1="0" y2="1100" animate = {config.line2style}transition={transition}/>
 				<motion.line className="absolute" stroke="rgba(239, 90, 60, 0.2222222222222222)" strokeWidth="1px" x1="200" x2="0" y1="0" y2="1100" transition={transition}/>
-				<motion.line className="absolute" stroke="rgba(239, 90, 60, 0.3333333333333333)" strokeWidth="1px" x1="200" x2="0" y1="0" y2="1100" transition={transition}/>
-				<motion.line className="absolute" stroke="rgba(239, 90, 60, 0.4444444444444444)" strokeWidth="1px" x1="200" x2="0" y1="0" y2="1100" transition={transition}/>
-				<motion.line className="absolute" stroke="rgba(239, 90, 60, 0.5555555555555556)" strokeWidth="1px" x1="200" x2="0" y1="0" y2="1100" transition={transition}/>
-				<motion.line className="absolute" stroke="rgba(239, 90, 60, 0.6666666666666666)" strokeWidth="1px" x1="200" x2="0" y1="0" y2="1100" transition={transition}/>
-				<motion.line className="absolute" stroke="rgba(239, 90, 60, 0.7777777777777777)" strokeWidth="1px" x1="200" x2="0" y1="0" y2="1100" transition={transition}/>
-				<motion.line className="absolute" stroke="rgba(239, 90, 60, 0.8888888888888888)" strokeWidth="1px" x1="200" x2="0" y1="0" y2="1100" transition={transition}/>
+				<motion.line className="absolute" stroke="rgba(239, 90, 60, 0.8888888888888888)" strokeWidth="1px" x1="170" x2="150" y1="200" y2="300" animate = {config.line2style} transition={transition}/>
 				<line className="absolute" stroke="rgba(0,0,0,0.16)" strokeDasharray="5 5" strokeWidth="0.67px" x1="700" x2="0" y1="0" y2="1100"></line>
 				<line className="absolute" stroke="rgba(0,0,0,0.16)" strokeWidth="0.67px" x1="2000" x2="0" y1="0" y2="1100"></line>
 				<line className="absolute" stroke="rgba(0,0,0,0.16)" strokeDasharray="5 5" strokeWidth="0.67px" x1="6000" x2="0" y1="0" y2="1100"></line>
@@ -149,15 +137,14 @@ const BackgroundImage = () => {
 				<line className="absolute" stroke="rgba(0,0,0,0.06)" strokeWidth="0.67px" x1="1960" x2="1960" y1="0" y2="1100"></line>
 				<line className="absolute" stroke="rgba(0,0,0,0.06)" strokeWidth="0.67px" x1="1980" x2="1980" y1="0" y2="1100"></line>
 				<line className="absolute" stroke="rgba(0,0,0,0.06)" strokeWidth="0.67px" x1="2000" x2="2000" y1="0" y2="1100"></line>
-				<line className="absolute" stroke="rgba(207, 116, 162, 0)" strokeWidth="1px" x1="1420" x2="1420" y1="0" y2="1100"></line>
-				<line className="absolute" stroke="rgba(207, 116, 162, 0.1111111111111111)" strokeWidth="1px" x1="1420" x2="1420" y1="0" y2="1100"></line>
-				<line className="absolute" stroke="rgba(207, 116, 162, 0.2222222222222222)" strokeWidth="1px" x1="1420" x2="1420" y1="0" y2="1100"></line>
-				<line className="absolute" stroke="rgba(207, 116, 162, 0.3333333333333333)" strokeWidth="1px" x1="1420" x2="1420" y1="0" y2="1100"></line>
-				<line className="absolute" stroke="rgba(207, 116, 162, 0.4444444444444444)" strokeWidth="1px" x1="1420" x2="1420" y1="0" y2="1100"></line>
-				<line className="absolute" stroke="rgba(207, 116, 162, 0.5555555555555556)" strokeWidth="1px" x1="1420" x2="1420" y1="0" y2="1100"></line>
-				<line className="absolute" stroke="rgba(207, 116, 162, 0.6666666666666666)" strokeWidth="1px" x1="1420" x2="1420" y1="0" y2="1100"></line>
-				<line className="absolute" stroke="rgba(207, 116, 162, 0.7777777777777777)" strokeWidth="1px" x1="1420" x2="1420" y1="0" y2="1100"></line>
-				<line className="absolute" stroke="rgba(207, 116, 162, 0.8888888888888888)" strokeWidth="1px" x1="1420" x2="1420" y1="0" y2="1100"></line>
+				<motion.line className="absolute" stroke="rgba(207, 116, 162, 0)" strokeWidth="1px" x1="1420" x2="1420" y1="0" y2="100" animate = {config.line3style} transition={transition}/>
+				<motion.line className="absolute" stroke="rgba(207, 116, 162, 0.1111111111111111)" strokeWidth="1px" x1="1420" x2="1420" y1="0" y2="100" animate = {config.line3style} transition={transition}/>
+				<motion.line className="absolute" stroke="rgba(207, 116, 162, 0.2222222222222222)" strokeWidth="1px" x1="1420" x2="1420" y1="0" y2="100" animate = {config.line3style} transition={transition}/>
+				<motion.line className="absolute" stroke="rgba(207, 116, 162, 0.3333333333333333)" strokeWidth="1px" x1="1420" x2="1420" y1="0" y2="100"animate = {config.line3style} transition={transition}/>
+				<motion.line className="absolute" stroke="rgba(207, 116, 162, 0.4444444444444444)" strokeWidth="1px" x1="1420" x2="1420" y1="0" y2="100"animate = {config.line3style} transition={transition}/>
+				<motion.line className="absolute" stroke="rgba(207, 116, 162, 0.5555555555555555)" strokeWidth="1px" x1="1420" x2="1420" y1="0" y2="100"animate = {config.line3style} transition={transition}/>
+				<motion.line className="absolute" stroke="rgba(207, 116, 162, 0.6666666666666666)" strokeWidth="1px" x1="1420" x2="1420" y1="0" y2="100"animate = {config.line3style} transition={transition}/>
+				<motion.line className="absolute" stroke="rgba(207, 116, 162, 0.3333333333333333)" strokeWidth="1px" x1="1420" x2="1420" y1="0" y2="1100" />
 				<line className="absolute" stroke="rgba(0,0,0,0.06)" strokeWidth="0.67px" x1="0" x2="2000" y1="20" y2="20"></line>
 				<line className="absolute" stroke="rgba(0,0,0,0.06)" strokeWidth="0.67px" x1="0" x2="2000" y1="40" y2="40"></line>
 				<line className="absolute" stroke="rgba(0,0,0,0.06)" strokeWidth="0.67px" x1="0" x2="2000" y1="60" y2="60"></line>
@@ -212,24 +199,20 @@ const BackgroundImage = () => {
 				<line className="absolute" stroke="rgba(0,0,0,0.06)" strokeWidth="0.67px" x1="0" x2="2000" y1="1040" y2="1040"></line>
 				<line className="absolute" stroke="rgba(0,0,0,0.06)" strokeWidth="0.67px" x1="0" x2="2000" y1="1060" y2="1060"></line>
 				<line className="absolute" stroke="rgba(0,0,0,0.06)" strokeWidth="0.67px" x1="0" x2="2000" y1="1080" y2="1080"></line>
-				<line className="absolute" stroke="rgba(12, 160, 99, 1)" strokeWidth="1px" x1="0" x2="2000" y1="100" y2="100" pathLength="1" strokeDashoffset="-0.20124333333333422px" strokeDasharray="0.01px 1px"></line>
-				<line className="absolute" stroke="rgba(12, 160, 99, 0.8888888888888888)" strokeWidth="1px" x1="0" x2="2000" y1="100" y2="100" pathLength="1" strokeDashoffset="-0.21124333333333423px" strokeDasharray="0.01px 1px"></line>
-				<line className="absolute" stroke="rgba(12, 160, 99, 0.7777777777777778)" strokeWidth="1px" x1="0" x2="2000" y1="100" y2="100" pathLength="1" strokeDashoffset="-0.22124333333333424px" strokeDasharray="0.01px 1px"></line>
-				<line className="absolute" stroke="rgba(12, 160, 99, 0.6666666666666667)" strokeWidth="1px" x1="0" x2="2000" y1="100" y2="100" pathLength="1" strokeDashoffset="-0.23124333333333424px" strokeDasharray="0.01px 1px"></line>
-				<line className="absolute" stroke="rgba(12, 160, 99, 0.5555555555555556)" strokeWidth="1px" x1="0" x2="2000" y1="100" y2="100" pathLength="1" strokeDashoffset="-0.24124333333333425px" strokeDasharray="0.01px 1px"></line>
-				<line className="absolute" stroke="rgba(12, 160, 99, 0.4444444444444444)" strokeWidth="1px" x1="0" x2="2000" y1="100" y2="100" pathLength="1" strokeDashoffset="-0.25124333333333426px" strokeDasharray="0.01px 1px"></line>
-				<line className="absolute" stroke="rgba(12, 160, 99, 0.33333333333333337)" strokeWidth="1px" x1="0" x2="2000" y1="100" y2="100" pathLength="1" strokeDashoffset="-0.26124333333333416px" strokeDasharray="0.01px 1px"></line>
-				<line className="absolute" stroke="rgba(12, 160, 99, 0.22222222222222232)" strokeWidth="1px" x1="0" x2="2000" y1="100" y2="100" pathLength="1" strokeDashoffset="-0.27124333333333417px" strokeDasharray="0.01px 1px"></line>
-				<line className="absolute" stroke="rgba(12, 160, 99, 0.11111111111111116)" strokeWidth="1px" x1="0" x2="2000" y1="100" y2="100" pathLength="1" strokeDashoffset="-0.2812433333333342px" strokeDasharray="0.01px 1px"></line>
-				<line className="absolute" stroke="rgba(39, 151, 207, 0)" strokeWidth="1px" x1="0" x2="2000" y1="400" y2="400" pathLength="1" strokeDashoffset="-0.7987566666666658px" strokeDasharray="0.01px 1px"></line>
-				<line className="absolute" stroke="rgba(39, 151, 207, 0.1111111111111111)" strokeWidth="1px" x1="0" x2="2000" y1="400" y2="400" pathLength="1" strokeDashoffset="-0.8087566666666658px" strokeDasharray="0.01px 1px"></line>
-				<line className="absolute" stroke="rgba(39, 151, 207, 0.2222222222222222)" strokeWidth="1px" x1="0" x2="2000" y1="400" y2="400" pathLength="1" strokeDashoffset="-0.8187566666666658px" strokeDasharray="0.01px 1px"></line>
-				<line className="absolute" stroke="rgba(39, 151, 207, 0.3333333333333333)" strokeWidth="1px" x1="0" x2="2000" y1="400" y2="400" pathLength="1" strokeDashoffset="-0.8287566666666658px" strokeDasharray="0.01px 1px"></line>
-				<line className="absolute" stroke="rgba(39, 151, 207, 0.4444444444444444)" strokeWidth="1px" x1="0" x2="2000" y1="400" y2="400" pathLength="1" strokeDashoffset="-0.8387566666666658px" strokeDasharray="0.01px 1px"></line>
-				<line className="absolute" stroke="rgba(39, 151, 207, 0.5555555555555556)" strokeWidth="1px" x1="0" x2="2000" y1="400" y2="400" pathLength="1" strokeDashoffset="-0.8487566666666658px" strokeDasharray="0.01px 1px"></line>
-				<line className="absolute" stroke="rgba(39, 151, 207, 0.6666666666666666)" strokeWidth="1px" x1="0" x2="2000" y1="400" y2="400" pathLength="1" strokeDashoffset="-0.858756666666666px" strokeDasharray="0.01px 1px"></line>
-				<line className="absolute" stroke="rgba(39, 151, 207, 0.7777777777777777)" strokeWidth="1px" x1="0" x2="2000" y1="400" y2="400" pathLength="1" strokeDashoffset="-0.868756666666666px" strokeDasharray="0.01px 1px"></line>
-				<line className="absolute" stroke="rgba(39, 151, 207, 0.8888888888888888)" strokeWidth="1px" x1="0" x2="2000" y1="400" y2="400" pathLength="1" strokeDashoffset="-0.8787566666666659px" strokeDasharray="0.01px 1px"></line>
+				<motion.line className="absolute" stroke="rgba(12, 160, 99, 1)" strokeWidth="1px" x1="1000" x2="1100" y1="100" y2="100" pathLength="1" animate = {config.line4style} transition={transition}/>
+				<motion.line className="absolute" stroke="rgba(12, 160, 99, 0.8888888888888888)" strokeWidth="1px" x1="1000" x2="1100" y1="100" y2="100" pathLength="1" animate = {config.line4style} transition={transition}/>
+				<motion.line className="absolute" stroke="rgba(12, 160, 99, 0.7777777777777778)" strokeWidth="1px" x1="1000" x2="1100" y1="100" y2="100" pathLength="1" animate = {config.line4style} transition={transition}/>
+				<motion.line className="absolute" stroke="rgba(12, 160, 99, 0.22222222222222232)" strokeWidth="1px" x1="0" x2="2000" y1="100" y2="100" pathLength="1"/>
+				<motion.line className="absolute" stroke="rgba(12, 160, 99, 0.11111111111111116)" strokeWidth="1px" x1="0" x2="2000" y1="100" y2="100" pathLength="1"/>
+				<motion.line className="absolute" stroke="rgba(39, 151, 207, 0)" strokeWidth="1px" x1="800" x2="900" y1="400" y2="400" pathLength="1" animate = {config.line5style} transition={transition2}/>
+				{/* <motion.line className="absolute" stroke="rgba(39, 151, 207, 0.1111111111111111)" strokeWidth="1px" x1="1000" x2="1100" y1="400" y2="400" pathLength="1" animate = {config.line5style} transition={transition}/>
+				<motion.line className="absolute" stroke="rgba(39, 151, 207, 0.2222222222222222)" strokeWidth="1px" x1="1000" x2="1100" y1="400" y2="400" pathLength="1" animate = {config.line5style} transition={transition}/>
+				<motion.line className="absolute" stroke="rgba(39, 151, 207, 0.3333333333333333)" strokeWidth="1px" x1="1000" x2="1100" y1="400" y2="400" pathLength="1" animate = {config.line5style} transition={transition}/>
+				<motion.line className="absolute" stroke="rgba(39, 151, 207, 0.4444444444444444)" strokeWidth="1px" x1="0" x2="2000" y1="400" y2="400" pathLength="1" animate = {config.line5style} transition={transition}/>
+				<motion.line className="absolute" stroke="rgba(39, 151, 207, 0.5555555555555556)" strokeWidth="1px" x1="0" x2="2000" y1="400" y2="400" pathLength="1" animate = {config.line5style} transition={transition}/> */}
+				<motion.line className="absolute" stroke="rgba(39, 151, 207, 0.6666666666666666)" strokeWidth="1px" x1="800" x2="900" y1="400" y2="400" pathLength="1" animate = {config.line5style} transition={transition2}/>
+				<motion.line className="absolute" stroke="rgba(39, 151, 207, 0.7777777777777777)" strokeWidth="1px" x1="800" x2="900" y1="400" y2="400" pathLength="1" animate = {config.line5style} transition={transition2}/>
+				<motion.line className="absolute" stroke="rgba(39, 151, 207, 0.3333333333333333)" strokeWidth="1px" x1="0" x2="2000" y1="400" y2="400" pathLength="1"/>
 			</svg>
 
 
